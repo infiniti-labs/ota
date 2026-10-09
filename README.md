@@ -34,3 +34,16 @@ expire or stop being accepted; the included identity is a diagnostic configurati
 not a guarantee of integrity verdicts or payment compatibility.
 
 Manual `pif_data` on the phone takes precedence over the downloaded configuration.
+
+## Automatic refresh
+
+The GitHub workflow refreshes the shared JSON at 09:00 IST on the second
+Wednesday of each month, or on manual dispatch. Weekly schedule triggers on
+other Wednesdays exit without downloading or changing anything.
+
+It downloads and executes upstream PlayIntegrityFork `autopif4.sh` unchanged.
+A minimal `getprop` adapter selects Pixel 11 Pro (`grizzly`); BusyBox provides
+the date syntax expected by upstream. Generated files stay in runner temporary
+storage. `actions/github-script` validates the selected device and converts the
+output to PixelOS field names. No Android installation or firmware download is
+performed. Failed generation leaves the existing JSON unchanged.

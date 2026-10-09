@@ -1,0 +1,114 @@
+name: Update certified Build properties
+
+on:
+  schedule:
+    - cron: '30 3 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-certified-props
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check second Wednesday in IST
+        id: schedule
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          day=$(TZ=Asia/Kolkata date +%-d)
+          if [[ "$EVENT_NAME" == workflow_dispatch || ( "$day" -ge 8 && "$day" -le 14 ) ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.schedule.outputs.run == 'true'
+      - name: Prepare upstream script environment
+        if: steps.schedule.outputs.run == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq busybox
+          command -v wget
+          command -v nc
+          mkdir -p "$RUNNER_TEMP/autopif/bin"
+          cat > "$RUNNER_TEMP/autopif/bin/getprop" <<'EOF'
+          #!/bin/sh
+          case "$1" in
+            ro.product.device) echo grizzly ;;
+            ro.product.model) echo 'Pixel 11 Pro' ;;
+            *) exit 1 ;;
+          esac
+          EOF
+          chmod +x "$RUNNER_TEMP/autopif/bin/getprop"
+      - name: Download upstream autopif4
+        if: steps.schedule.outputs.run == 'true'
+        run: |
+          curl --fail --location --retry 3 --max-time 60 \
+            https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/main/module/autopif4.sh \
+            --output "$RUNNER_TEMP/autopif/autopif4.sh"
+      - name: Generate Pixel 11 Pro configuration
+        if: steps.schedule.outputs.run == 'true'
+        env:
+          # Upstream checks USER; metadata generation itself runs without sudo.
+          USER: root
+          BUSYBOX: /usr/bin/busybox
+        run: |
+          export PATH="$RUNNER_TEMP/autopif/bin:$PATH"
+          bash -O xpg_echo "$RUNNER_TEMP/autopif/autopif4.sh" --match
+      - name: Convert to PixelOS JSON
+        if: steps.schedule.outputs.run == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('node:fs');
+            const path = require('node:path');
+            const text = fs.readFileSync(path.join(process.env.RUNNER_TEMP, 'autopif', 'pif.prop'), 'utf8');
+            const props = Object.fromEntries(text.split(/\r?\n/)
+              .filter(line => line && !line.startsWith('#') && line.includes('='))
+              .map(line => {
+                const index = line.indexOf('=');
+                return [line.slice(0, index), line.slice(index + 1)];
+              }));
+            if (props.MODEL !== 'Pixel 11 Pro' || props.DEVICE !== 'grizzly') {
+              throw new Error('Upstream did not select Pixel 11 Pro');
+            }
+            const match = /^([^/]+)\/([^/]+)\/([^:]+):([^/]+)\/([^/]+)\/([^:]+):([^/]+)\/([^/]+)$/.exec(props.FINGERPRINT);
+            if (!match) throw new Error('Invalid fingerprint');
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(props.SECURITY_PATCH)) {
+              throw new Error('Invalid security patch');
+            }
+            if (!/^\d+$/.test(props.DEVICE_INITIAL_SDK_INT)) {
+              throw new Error('Invalid initial SDK');
+            }
+            const [, brand, product, device, release, id, incremental, type, tags] = match;
+            const converted = {
+              MANUFACTURER: props.MANUFACTURER,
+              MODEL: props.MODEL,
+              BRAND: brand,
+              PRODUCT: product,
+              DEVICE: device,
+              FINGERPRINT: props.FINGERPRINT,
+              ID: id,
+              TYPE: type,
+              TAGS: tags,
+              'VERSION.RELEASE': release,
+              'VERSION.INCREMENTAL': incremental,
+              'VERSION.SECURITY_PATCH': props.SECURITY_PATCH,
+              'VERSION.DEVICE_INITIAL_SDK_INT': props.DEVICE_INITIAL_SDK_INT,
+            };
+            fs.writeFileSync('certified_build_props.json', JSON.stringify(converted, null, 2) + '\n');
+      - name: Commit changed configuration
+        if: steps.schedule.outputs.run == 'true'
+        run: |
+          if git diff --quiet -- certified_build_props.json; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add certified_build_props.json
+          git commit -m 'chore: update Pixel 11 Pro Canary properties'
+          git push
