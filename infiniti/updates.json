@@ -1,16 +1,16 @@
 [
   {
-    "datetime": 1791732747,
+    "datetime": 1791743859,
     "version": "17.0",
     "files": [
       {
-        "filename": "PixelOS_infiniti-17.0-20261011-1533.zip",
+        "filename": "PixelOS_infiniti-17.0-20261011-1838.zip",
         "os_patch_level": "2026-09-01",
         "os_sdk_level": 37,
-        "sha256": "204215112540840a1d4a3cfa0e8c0faba0c2e61800efa8fe2a41f059172d06e7",
-        "size": 4678752759,
-        "url": "https://downloads.kakatkarakshay.dev/PixelOS_infiniti-17.0-20261011-1533.zip",
-        "ota_property_files": "payload_metadata.bin:5109:241321,payload.bin:5109:4678744399,payload_properties.txt:4678749566:156,apex_info.pb:2407:1542,care_map.pb:3996:1046,metadata:69:708,metadata.pb:845:1514"
+        "sha256": "fa6559c8a05f55dd947380c524208b182156c993be4229273fec69fd4dafba43",
+        "size": 4678843864,
+        "url": "https://downloads.kakatkarakshay.dev/PixelOS_infiniti-17.0-20261011-1838.zip",
+        "ota_property_files": "payload_metadata.bin:5109:241326,payload.bin:5109:4678835504,payload_properties.txt:4678840671:156,apex_info.pb:2407:1542,care_map.pb:3996:1046,metadata:69:708,metadata.pb:845:1514"
       }
     ]
   }
