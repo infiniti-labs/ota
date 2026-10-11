@@ -1,0 +1,15 @@
+{
+  "MANUFACTURER": "Google",
+  "MODEL": "Pixel 6a",
+  "BRAND": "google",
+  "PRODUCT": "bluejay_beta",
+  "DEVICE": "bluejay",
+  "FINGERPRINT": "google/bluejay_beta/bluejay:CANARY/ZP11.260918.007/16484274:user/release-keys",
+  "ID": "ZP11.260918.007",
+  "TYPE": "user",
+  "TAGS": "release-keys",
+  "VERSION.RELEASE": "CANARY",
+  "VERSION.INCREMENTAL": "16484274",
+  "VERSION.SECURITY_PATCH": "2026-10-05",
+  "VERSION.DEVICE_INITIAL_SDK_INT": "32"
+}
