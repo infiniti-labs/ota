@@ -1,15 +1,16 @@
 {
-  "MANUFACTURER": "Google",
-  "MODEL": "Pixel 6a",
-  "BRAND": "google",
-  "PRODUCT": "bluejay_beta",
-  "DEVICE": "bluejay",
-  "FINGERPRINT": "google/bluejay_beta/bluejay:CANARY/ZP11.260918.007/16484274:user/release-keys",
-  "ID": "ZP11.260918.007",
+  "MANUFACTURER": "OnePlus",
+  "MODEL": "CPH2745",
+  "BRAND": "OnePlus",
+  "PRODUCT": "CPH2745IN",
+  "DEVICE": "OP611FL1",
+  "FINGERPRINT": "OnePlus/CPH2745IN/OP611FL1:16/BP2A.250605.015/B.R4T3.1abf132_aeee51_aea830:user/release-keys",
+  "ID": "BP2A.250605.015",
   "TYPE": "user",
   "TAGS": "release-keys",
-  "VERSION.RELEASE": "CANARY",
-  "VERSION.INCREMENTAL": "16484274",
-  "VERSION.SECURITY_PATCH": "2026-10-05",
-  "VERSION.DEVICE_INITIAL_SDK_INT": "32"
+  "VERSION.SDK_INT": "36",
+  "VERSION.RELEASE": "16",
+  "VERSION.INCREMENTAL": "B.R4T3.1abf132_aeee51_aea830",
+  "VERSION.SECURITY_PATCH": "2026-09-01",
+  "VERSION.DEVICE_INITIAL_SDK_INT": "36"
 }
