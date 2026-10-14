@@ -1,27 +1,27 @@
 [
   {
-    "datetime": 1791966250,
+    "datetime": 1791976443,
     "version": "17.0",
     "files": [
       {
-        "filename": "PixelOS_infiniti-17.0-20261014-0825.zip",
-        "os_patch_level": "2026-09-01",
+        "filename": "PixelOS_infiniti-17.0-20261014-1114.zip",
+        "os_patch_level": "2026-10-01",
         "os_sdk_level": 37,
-        "sha256": "3a5880bbd5fff7edcb67a2c10736939119c7b66f6e45d0177d76323098fdd1d8",
-        "size": 5056220557,
-        "url": "https://downloads.kakatkarakshay.dev/PixelOS_infiniti-17.0-20261014-0825.zip",
-        "ota_property_files": "payload_metadata.bin:5137:256464,payload.bin:5137:5056212169,payload_properties.txt:5056217364:156,apex_info.pb:2423:1542,care_map.pb:4012:1058,metadata:69:710,metadata.pb:847:1528"
+        "sha256": "c1f689a6125888f15110258a2ad9cc9ea6bb724b534547b70bee81c7f2d57802",
+        "size": 5053775954,
+        "url": "https://downloads.kakatkarakshay.dev/PixelOS_infiniti-17.0-20261014-1114.zip",
+        "ota_property_files": "payload_metadata.bin:5137:257542,payload.bin:5137:5053767566,payload_properties.txt:5053772761:156,apex_info.pb:2423:1542,care_map.pb:4012:1058,metadata:69:710,metadata.pb:847:1528"
       }
     ],
     "incremental": [
       {
-        "filename": "incremental_infiniti_20261013_1816_to_20261014_0824.zip",
-        "sha256": "a4289c52666eaf6010542b1256f53e660a99a25a9646057ca81e7f7421be688d",
-        "size": 24430000,
-        "os_patch_level": "2026-09-01",
+        "filename": "incremental_infiniti_20261014_0824_to_20261014_1114.zip",
+        "sha256": "aa1e62b0d670b8e686476110cfd27321fec0218e216a3f8eff9e1eb67efe4cf3",
+        "size": 48618499,
+        "os_patch_level": "2026-10-01",
         "os_sdk_level": 37,
-        "ota_property_files": "payload_metadata.bin:6461:6704622,payload.bin:6461:24420409,payload_properties.txt:24426928:155,apex_info.pb:3538:1771,care_map.pb:5356:1058,metadata:69:831,metadata.pb:968:2522",
-        "url": "https://downloads.kakatkarakshay.dev/incremental_infiniti_20261013_1816_to_20261014_0824.zip"
+        "ota_property_files": "payload_metadata.bin:6477:4980315,payload.bin:6477:48608892,payload_properties.txt:48615427:155,apex_info.pb:3554:1771,care_map.pb:5372:1058,metadata:69:833,metadata.pb:970:2536",
+        "url": "https://downloads.kakatkarakshay.dev/incremental_infiniti_20261014_0824_to_20261014_1114.zip"
       }
     ]
   }
