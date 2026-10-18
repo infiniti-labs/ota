@@ -1,16 +1,27 @@
 [
   {
-    "datetime": 1792347884,
+    "datetime": 1792351243,
     "version": "17.0",
     "files": [
       {
-        "filename": "PixelOS_infiniti-17.0-20261018-1827.zip",
-        "sha256": "b86ff1df2dcc4e9f93939a0cdaf956490e038b4e21d47f5160c8d246a8a8bc34",
-        "size": 4566620217,
-        "url": "https://downloads.kakatkarakshay.dev/PixelOS_infiniti-17.0-20261018-1827.zip",
+        "filename": "PixelOS_infiniti-17.0-20261018-1922.zip",
+        "sha256": "960c1c551b6094992a8d0e05632777e2a771a3ba228b0bf146bfc6703ebe274f",
+        "size": 4566614101,
+        "url": "https://downloads.kakatkarakshay.dev/PixelOS_infiniti-17.0-20261018-1922.zip",
         "os_patch_level": "2026-10-01",
         "os_sdk_level": 37,
-        "ota_property_files": "payload_metadata.bin:5104:234971,payload.bin:5104:4566611862,payload_properties.txt:4566617024:156,apex_info.pb:2406:1542,care_map.pb:3995:1042,metadata:69:710,metadata.pb:847:1511"
+        "ota_property_files": "payload_metadata.bin:5104:234971,payload.bin:5104:4566605746,payload_properties.txt:4566610908:156,apex_info.pb:2406:1542,care_map.pb:3995:1042,metadata:69:710,metadata.pb:847:1511"
+      }
+    ],
+    "incremental": [
+      {
+        "filename": "incremental_infiniti_20261018_1824_to_20261018_1920.zip",
+        "sha256": "80ae67475c7f2b3687e8fb0ad2dc1d524a4425df42d9bbba9e2bf7dee5dc75d9",
+        "size": 17672368,
+        "url": "https://downloads.kakatkarakshay.dev/incremental_infiniti_20261018_1824_to_20261018_1920.zip",
+        "os_patch_level": "2026-10-01",
+        "os_sdk_level": 37,
+        "ota_property_files": "payload_metadata.bin:6427:1463696,payload.bin:6427:17662811,payload_properties.txt:17669296:155,apex_info.pb:3520:1771,care_map.pb:5338:1042,metadata:69:833,metadata.pb:970:2502"
       }
     ]
   }
