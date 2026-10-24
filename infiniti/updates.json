@@ -1,27 +1,27 @@
 [
   {
-    "datetime": 1792790043,
+    "datetime": 1792856497,
     "version": "17.0",
     "files": [
       {
-        "filename": "PixelOS_infiniti-17.0-20261023-2116.zip",
-        "sha256": "2c5c23d344cc0e547a3b2357e4f013012e2b68755d2d00d152c56492101b4518",
-        "size": 4837361829,
-        "url": "https://downloads.kakatkarakshay.dev/PixelOS_infiniti-17.0-20261023-2116.zip",
+        "filename": "PixelOS_infiniti-17.0-20261024-1544.zip",
+        "sha256": "5fe385f44b41ba2192b7545b6c4d1df46cdcddbbba99f7a3d210288b7fd2f8d2",
+        "size": 4840104225,
+        "url": "https://downloads.kakatkarakshay.dev/PixelOS_infiniti-17.0-20261024-1544.zip",
         "os_patch_level": "2026-10-01",
         "os_sdk_level": 37,
-        "ota_property_files": "payload_metadata.bin:5076:236038,payload.bin:5076:4837353502,payload_properties.txt:4837358636:156,apex_info.pb:2390:1542,care_map.pb:3979:1030,metadata:69:708,metadata.pb:845:1497"
+        "ota_property_files": "payload_metadata.bin:5076:236313,payload.bin:5076:4840095898,payload_properties.txt:4840101032:156,apex_info.pb:2390:1542,care_map.pb:3979:1030,metadata:69:708,metadata.pb:845:1497"
       }
     ],
     "incremental": [
       {
-        "filename": "incremental_infiniti_20261023_2001_to_20261023_2114.zip",
-        "sha256": "f9b4e5bcae9d87f769111029c10bb0461cea17f9f37d3c9cedc0047f4f4e1447",
-        "size": 8916753,
-        "url": "https://downloads.kakatkarakshay.dev/incremental_infiniti_20261023_2001_to_20261023_2114.zip",
+        "filename": "incremental_infiniti_20261023_2114_to_20261024_1541.zip",
+        "sha256": "20672ce4711de0a2422c2f0ef2427d013cff0f4bc87d72c6029332115d8fcd26",
+        "size": 29711103,
+        "url": "https://downloads.kakatkarakshay.dev/incremental_infiniti_20261023_2114_to_20261024_1541.zip",
         "os_patch_level": "2026-10-01",
         "os_sdk_level": 37,
-        "ota_property_files": "payload_metadata.bin:6365:801408,payload.bin:6365:8907260,payload_properties.txt:8913683:153,apex_info.pb:3470:1771,care_map.pb:5288:1030,metadata:69:820,metadata.pb:957:2465"
+        "ota_property_files": "payload_metadata.bin:6381:831033,payload.bin:6381:29701593,payload_properties.txt:29708032:154,apex_info.pb:3486:1771,care_map.pb:5304:1030,metadata:69:828,metadata.pb:965:2473"
       }
     ]
   }
